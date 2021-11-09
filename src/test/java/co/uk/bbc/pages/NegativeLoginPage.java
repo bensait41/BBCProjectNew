@@ -10,13 +10,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.Locale;
 
-public class NaegativeLoginPage {
+public class NegativeLoginPage {
 
     private Faker faker;
 
 
 
-    public NaegativeLoginPage() {
+    public NegativeLoginPage() {
         PageFactory.initElements(Driver.get(), this);
     }
 
