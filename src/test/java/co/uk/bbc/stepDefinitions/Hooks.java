@@ -10,13 +10,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    @Before
+   @Before
     public void setUp(){
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.get().manage().window().maximize();
-        System.out.println("BEFORE METHOD");
     }
-
 
     @After
     public void tearDown(Scenario scenario){
@@ -24,8 +22,6 @@ public class Hooks {
             final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png","screenshot");
         }
-
-        System.out.println("AFTER METHOD");
         Driver.closeDriver();
 
     }

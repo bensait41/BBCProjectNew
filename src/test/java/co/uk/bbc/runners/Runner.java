@@ -12,11 +12,10 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
 */
 
-
         features = "src/test/resources/features",
-        glue = "com/website/stepDefinitions",
+        glue = "co/uk/bbc/stepDefinitions",
         dryRun =false,
-        tags = "@testing"
+        tags = "@TestFeature1"
 )
 public class Runner {
 }
