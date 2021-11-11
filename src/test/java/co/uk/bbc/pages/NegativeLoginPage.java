@@ -1,10 +1,10 @@
+
 package co.uk.bbc.pages;
 
 import co.uk.bbc.utilities.Driver;
 import com.github.javafaker.Faker;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -39,11 +39,10 @@ public class NegativeLoginPage {
         String username = faker.name().username(); // "josé luis.alonso"
         String email = faker.internet().safeEmailAddress(); // "josé luis.alonso@example.com"
 
-
     }
 
-    @Test
 
+    @Test
     public void fakeEmail(){
 
        faker = new Faker(new Locale("es"));
@@ -55,3 +54,4 @@ public class NegativeLoginPage {
     }
 
 }
+
