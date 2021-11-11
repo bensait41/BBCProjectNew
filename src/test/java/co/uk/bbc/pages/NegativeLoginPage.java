@@ -22,13 +22,29 @@ public class NegativeLoginPage {
     public WebElement singIn;
 
     @FindBy(xpath = "//input[@type='email']")
-    public WebElement emailButton;
+    public WebElement emailUsernameInputBox;
 
     @FindBy(xpath = "//input[@type='password']")
-    public WebElement passwordButton;
+    public WebElement passwordInputBox;
 
     @FindBy(xpath = "//button/span[text()='Sign in']")
     public WebElement singInButton;
+
+    @FindBy(xpath = "//div[@id='form-message-general']")
+    public WebElement dontMatchError;
+
+    @FindBy(xpath = "//div[@data-bbc-title='username-error']")
+    public WebElement userMissingError;
+
+    @FindBy(xpath = "//div[@data-bbc-title='password-error']")
+    public WebElement passMissingError;
+
+    @FindBy(xpath = "//div[@id='form-message-username']")
+    public WebElement userInsufficientCharacterError;
+
+
+
+
 
     public void login(String user, String pass) {
 
@@ -40,7 +56,7 @@ public class NegativeLoginPage {
     }
 
 
-    @Test
+
     public void fakeEmail(){
 
        faker = new Faker(new Locale("es"));
