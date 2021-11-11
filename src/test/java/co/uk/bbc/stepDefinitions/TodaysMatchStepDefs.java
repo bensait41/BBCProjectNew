@@ -25,6 +25,7 @@ public class TodaysMatchStepDefs {
             for (WebElement teamName : tMatches.teamNames) {
                 System.out.println(teamName.getText());
             }
+
         }
         Assert.assertTrue("There are NO teams with a match today",tMatches.teamNames.size()!=0);
     }

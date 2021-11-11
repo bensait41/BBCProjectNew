@@ -13,8 +13,6 @@ import java.util.Locale;
 public class NegativeLoginPage {
 
     private Faker faker;
-    // edited
-
 
     public NegativeLoginPage() {
         PageFactory.initElements(Driver.get(), this);
@@ -34,7 +32,7 @@ public class NegativeLoginPage {
 
     public void login(String user, String pass) {
 
-        Faker faker = new Faker(new Locale("es"));
+        Faker faker = new Faker();
 
         String username = faker.name().username(); // "josé luis.alonso"
         String email = faker.internet().safeEmailAddress(); // "josé luis.alonso@example.com"
