@@ -42,7 +42,23 @@ public class NegativeLoginPage {
     @FindBy(xpath = "//div[@id='form-message-username']")
     public WebElement userInsufficientCharacterError;
 
+    @FindBy(id = "form-message-username")
+    public WebElement userInvalidCharError;
 
+    @FindBy(id = "form-message-username")
+    public WebElement userTooLongError;
+
+    @FindBy(id = "form-message-username")
+    public WebElement notProperEmailError;
+
+    @FindBy(id = "form-message-password")
+    public WebElement passMissALetterError;
+
+    @FindBy(id = "form-message-password")
+    public WebElement passLessThanEightCharError;
+
+    @FindBy(id = "form-message-password")
+    public WebElement passTooLongError;
 
 
 

@@ -45,6 +45,7 @@ public class NegativeLoginStepDefs {
 
     @When("the user enters username {string}")
     public void the_user_enters_username(String enterUser) {
+
         negativeLP.emailUsernameInputBox.sendKeys(enterUser);
     }
 
@@ -57,43 +58,79 @@ public class NegativeLoginStepDefs {
 
     @When("the user enters username that include characters not from these {string}")
     public void the_user_enters_username_that_include_characters_not_from_these(String validChars) {
+        negativeLP.emailUsernameInputBox.sendKeys("AB*");
+    }
 
+    @Then("the user should see invalid Char message {string}")
+    public void the_user_should_see_invalid_Char_message(String invalidCharMessage) {
+        String expectedResult = invalidCharMessage;
+        String actualResult = negativeLP.userInvalidCharError.getText();
+        Assert.assertEquals(expectedResult,actualResult);
+    }
 
-            }
+    @When("the user enters username more than 50# characters")
+    public void the_user_enters_username_more_than_characters() {
+        negativeLP.emailUsernameInputBox.sendKeys("123456789012345678901234567890123456789012345678901");
+    }
 
-    @When("the username enters more than 50# characters")
-    public void the_username_enters_more_than_characters() {
-
+    @Then("the user should see username too long {string}")
+    public void the_user_should_see_username_too_long(String userTooLongMessage) {
+        String expectedResult = userTooLongMessage;
+        String actualResult = negativeLP.userTooLongError.getText();
+        Assert.assertEquals(expectedResult,actualResult);
     }
 
     @When("the user enters email with wrong format")
     public void the_user_enters_email_with_wrong_format() {
+        negativeLP.emailUsernameInputBox.sendKeys("a@.cm");
+    }
 
+    @Then("the user should see not proper email {string}")
+    public void the_user_should_see_not_proper_email(String notProperEmailMesaage) {
+        String expectedResult = notProperEmailMesaage;
+        String actualResult = negativeLP.notProperEmailError.getText();
+        Assert.assertEquals(expectedResult,actualResult);
     }
 
     @When("the user enters email with correct format")
     public void the_user_enters_email_with_correct_format() {
-
-    }
-
-    @Then("And the user should see {string} message for password")
-    public void and_the_user_should_see_message_for_password(String string) {
-
+        negativeLP.emailUsernameInputBox.sendKeys("a@b.com");
     }
 
     @When("the user enters password less than 8# characters")
     public void the_user_enters_password_less_than_characters() {
+        negativeLP.passwordInputBox.sendKeys("1A2b");
+    }
 
+    @Then("the user should see too short password {string}")
+    public void the_user_should_see_too_short_password(String passLessThanEightCharMessage) {
+        String expectedResult = passLessThanEightCharMessage;
+        String actualResult = negativeLP.passLessThanEightCharError.getText();
+        Assert.assertEquals(expectedResult,actualResult);
     }
 
     @When("the user enters password without any letter")
     public void the_user_enters_password_without_any_letter() {
-
+        negativeLP.passwordInputBox.sendKeys("123456789");
     }
 
     @When("the user enters password with more than 50# characters")
     public void the_user_enters_password_with_more_than_characters() {
+        negativeLP.passwordInputBox.sendKeys("123456789012345678901234567890123456789012345678901");
+    }
 
+    @Then("the user should see password miss a letter {string}")
+    public void the_user_should_see_password_miss_a_letter(String passMissALetterMessage) {
+        String expectedResult = passMissALetterMessage;
+        String actualResult = negativeLP.passMissALetterError.getText();
+        Assert.assertEquals(expectedResult,actualResult);
+    }
+
+    @Then("the user should see too long password {string}")
+    public void the_user_should_see_too_long_password(String passTooLongMessage) {
+        String expectedResult = passTooLongMessage;
+        String actualResult = negativeLP.passTooLongError.getText();
+        Assert.assertEquals(expectedResult,actualResult);
     }
 
 
